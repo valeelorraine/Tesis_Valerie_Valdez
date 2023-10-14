@@ -20,8 +20,9 @@ La finalidad de este sistema era verificar la funcionalidad de la plataforma rob
 # Física granular
 La física granular es una rama de la física que se enfoca en el estudio de materiales como arena, polvo, granos, entre otros. Estos muestran una variedad de comportamientos complejos y no lineales, a menudo impulsados por la interacción entre las partículas, que difieren en muchas maneras de otras sustancias. El propósito de esta rama de investigación es comprender los complejos comportamientos emergentes, originados en sistemas compuestos por una gran cantidad de partículas sólidas que interactúan entre sí (Jaeger, 2011). 
 
-
-
+Algunas herramientas utilizadas para el estudio de la física granular son los algoritmos. Existen distintos algoritmos y si se desea saber un poco más acerca de ellos, se puede revisar el marco teórico del trabajo realizado, no obstante, en este repositorio se hablará únicamente de dos: *Dinámica molecular* y *La simulación directa de Monte Carlo*.
+[Contribution guidelines for this project](Diagramas/DM_tiro_parabólico.drawio)
+[Contribution guidelines for this project]([Contribution guidelines for this project](docs/CONTRIBUTING.md))
 # Referencias
 Jaeger & Sidney. (2011). *Physics of the Granular State.* https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/jaeger1992a.pdf
 
