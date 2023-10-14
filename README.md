@@ -1,2 +1,2 @@
-# Tesis_Valerie_Valdez
- GIFs de simulaciones y código realizado
+## Tesis_Valerie_Valdez
+Repositorio para documentos, fotografías y 
