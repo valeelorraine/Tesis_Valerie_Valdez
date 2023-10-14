@@ -38,7 +38,6 @@ Los resultados más significativos para esta primera implementación se pueden o
 Una parte fundamental de estas simulaciones es la consideración del potencial del LJP, que modela las interacciones entre partículas. Se demostró que el
 comportamiento de las partículas está influenciado por las fuerzas atractivas y repulsivas del LJP, lo que puede dar lugar a cambios notables en las trayectorias. A medida que se avance en el capítulo, se evidencia que se examinaron simulaciones más complejas, incluyendo sistemas tridimensionales y configuraciones con un mayor número de partículas. Estas simulaciones dinámicas contribuyeron a indagar en comprender cómo las interacciones entre partículas pueden dar lugar a agrupamientos y patrones emergentes. En síntesis, en este capítulo se explora la dinámica molecular, la simulación directa de Monte Carlo y las simulaciones de sistemas granulares. Para obtener los resultados de las simulaciones, se desarrollaron múltiples códigos utilizando el software MATLAB. Asimismo, en las siguientes secciones se proporcionaron explicaciones detalladas de diferentes secciones de código para ayudar al lector a identificar y comprender las partes esenciales para realizar
 
-[Contribution guidelines for this project]([Contribution guidelines for this project](docs/CONTRIBUTING.md))
 
 # Referencias
 Jaeger & Sidney. (2011). *Physics of the Granular State.* https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/jaeger1992a.pdf
