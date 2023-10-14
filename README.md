@@ -12,8 +12,16 @@ Previamente, en la Universidad del Valle de Guatemala se llevó a cabo un proyec
 
 ![Alphabot2.](Fotos/Alphabot2-pi-3.jpg)
 
-La finalidad de este sistema era verificar la funcionalidad de la plataforma robótica Alphabot 2 así como su capacidad de ejecutar tareas relacionadas al seguimiento de líneas pintadas en el suelo. Para utilizar estos agentes, se requiere tener una base de conocimientos en la serie de ordenadores monoplaca Rasperry Pi, ya que para controlar el agente se utiliza una placa Rasperry Pi 3B. Asimismo, se requiere saber datos de implementación y funcionalidad de los agentes en general, es así que se utilizó un manual de usuario creado por Luis Nij [Colocar documento].
-
-Estas pruebas, se replicaron para este trabajo de graduación, con el fin de comparar el funcionamiento y rendimiento que estos agentes robóticos móviles tendrían a comparación de los agentes robóticos Pololu 3Pi+ 32u4 OLED, los cuales se pueden observar en la siguiente imagen.
+La finalidad de este sistema era verificar la funcionalidad de la plataforma robótica Alphabot 2 así como su capacidad de ejecutar tareas relacionadas al seguimiento de líneas pintadas en el suelo. Para utilizar estos agentes, se requiere tener una base de conocimientos en la serie de ordenadores monoplaca Rasperry Pi, ya que para controlar el agente se utiliza una placa Rasperry Pi 3B. Asimismo, se requiere saber datos de implementación y funcionalidad de los agentes en general, es así que se utilizó un manual de usuario creado por Luis Nij ***[Colocar documento]***. Las pruebasmencionadas con anterioridad, se replicaron en este trabajo de graduación con el fin de comparar el funcionamiento y rendimiento que estos agentes robóticos móviles tendrían a comparación de los agentes robóticos Pololu 3Pi+ 32u4 OLED, los cuales se pueden observar en la siguiente imagen.
 
 ![Agentes Pololu 3pi+ 32u Oled.](Fotos/Pololu.jpg)
+
+
+# Física granular
+La física granular es una rama de la física que se enfoca en el estudio de materiales como arena, polvo, granos, entre otros. Estos muestran una variedad de comportamientos complejos y no lineales, a menudo impulsados por la interacción entre las partículas, que difieren en muchas maneras de otras sustancias. El propósito de esta rama de investigación es comprender los complejos comportamientos emergentes, originados en sistemas compuestos por una gran cantidad de partículas sólidas que interactúan entre sí (Jaeger, 2011). 
+
+
+
+# Referencias
+Jaeger & Sidney. (2011). *Physics of the Granular State.* https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/jaeger1992a.pdf
+
