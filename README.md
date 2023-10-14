@@ -36,8 +36,15 @@ Los resultados más significativos para esta primera implementación se pueden o
 
 
 Una parte fundamental de estas simulaciones es la consideración del potencial del LJP, que modela las interacciones entre partículas. Se demostró que el
-comportamiento de las partículas está influenciado por las fuerzas atractivas y repulsivas del LJP, lo que puede dar lugar a cambios notables en las trayectorias. A medida que se avance en el capítulo, se evidencia que se examinaron simulaciones más complejas, incluyendo sistemas tridimensionales y configuraciones con un mayor número de partículas. Estas simulaciones dinámicas contribuyeron a indagar en comprender cómo las interacciones entre partículas pueden dar lugar a agrupamientos y patrones emergentes. En síntesis, en este capítulo se explora la dinámica molecular, la simulación directa de Monte Carlo y las simulaciones de sistemas granulares. Para obtener los resultados de las simulaciones, se desarrollaron múltiples códigos utilizando el software MATLAB. Asimismo, en las siguientes secciones se proporcionaron explicaciones detalladas de diferentes secciones de código para ayudar al lector a identificar y comprender las partes esenciales para realizar
+comportamiento de las partículas está influenciado por las fuerzas atractivas y repulsivas del LJP, lo que puede dar lugar a cambios notables en las trayectorias. A medida que se avance en el capítulo, se evidencia que se examinaron simulaciones más complejas, incluyendo sistemas tridimensionales y configuraciones con un mayor número de partículas. Estas simulaciones dinámicas contribuyeron a indagar en comprender cómo las interacciones entre partículas pueden dar lugar a agrupamientos y patrones emergentes. En síntesis, en este capítulo se explora la dinámica molecular, la simulación directa de Monte Carlo y las simulaciones de sistemas granulares. Para obtener los resultados de las simulaciones, se desarrollaron múltiples códigos utilizando el software MATLAB. Asimismo, en las siguientes secciones se proporcionaron explicaciones detalladas de diferentes secciones de código para ayudar al lector a identificar y comprender las partes esenciales para realizar.
 
+Esta contiene 100 partículas distribuidas equidistantes unas de las otras en un espacio de igual tamaño que las simulaciones anteriores. Esto puede observarse en la primera Figura que presenta una vista de los ejes Z y X de la simulación y la segunda Figura que presenta una vista isométrica de las tres dimensiones. 
+
+![3 partículas Dinámicas orbitando una estática con 150 pasos](Fotos/8particulas_DM_3D_VistaFrontal.eps)
+
+![3 partículas Dinámicas orbitando una estática con 150 pasos](Fotos/8particulas_DM_3D_VistaIsométrica.eps)
+
+Al pasar el tiempo, se evidencian comportamientos interesantes en donde en un sistema con muchas partículas aleatorias, es estadísticamente probable que algunas de estas partículas se acerquen lo suficiente como para experimentar interacciones atractivas debido al LJP. Cuando algunas partículas comienzan a acercarse, se forman pequeños grupos.
 
 # Referencias
 Jaeger & Sidney. (2011). *Physics of the Granular State.* https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/jaeger1992a.pdf
