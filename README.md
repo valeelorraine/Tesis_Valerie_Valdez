@@ -24,9 +24,11 @@ Algunas herramientas utilizadas para el estudio de la física granular son los a
 
 # Pruebas computarizadas
 Como se mencionó anteriormente en esta sección se destacan dos algoritmos de física granular: *Dinámica Molecular* y *La simulación directa de Monte Carlo*. Estos algoritmos se seleccionaron para realizar diversas simulaciones y así comprender cómo interactúan las partículas en un sistema y evolucionan con el tiempo. Para lograr esto, se aplican principios fundamentales de la física, como la Segunda Ley de Newton, que relaciona el cambio en el momento cinético con las fuerzas que
-actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del tiempo en las simulaciones, se recurre a métodos numéricos para calcular las posiciones y velocidades en momentos futuros. En estas pruebas iniciales, [se implementó el algoritmo de Dinámica Molecular](Diagramas/DM_tiro_parabólico.drawio) para simular el movimiento de partículas en un entorno bidimensional. 
+actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del tiempo en las simulaciones, se recurre a métodos numéricos para calcular las posiciones y velocidades en momentos futuros. En estas pruebas iniciales, [se implementó el algoritmo de Dinámica Molecular](Diagramas/DM_tiro_parabólico.drawio) para simular el movimiento de partículas en un entorno bidimensional, y al código se encuentra en este mismo [repositorio:](Códigos/DM_Computacional.m)
 
-Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede observar a continuación.
+Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede en las imagenes a continuación. Estas muestran la evolución de las trayectorias de 3 partículas en estado dinámico orbitando sobre una partícula estacionaria. Cada una de las partículas dinámicas presenta una trayectoria distinta debido a que se inicializaron con distintas condiciones iniciales. La velocidad
+
+![3 partículas Dinámicas orbitando una estática con 50 pasos](Fotos/3Dinamicas_1estatica_50pasos.eps)
 
 ![3 partículas Dinámicas orbitando una estática con 50 pasos](Fotos/3Dinamicas_1estatica_50pasos.eps)
 
