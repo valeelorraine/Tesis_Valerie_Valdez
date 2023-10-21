@@ -23,22 +23,21 @@ robotat_3pi_force_stop(PI3)
 r = 32/(2*1000); % Radio de las ruedas en metros
 l = 96/(2*1000); % Distancia entre ruedas en metros
 
-%% Obtén la posición inicial del robot en el sistema OptiTrack
-pose = robotat_get_pose(Opti, PololuNumb, 'eulzyx');
-x_initial = pose(1);
-y_initial = pose(2);
+% Conexión con el robot Pololu
+PololuNumb = 2; % Número de Pololu
+PI3 = robotat_3pi_connect(PololuNumb);
 
-% Realiza la traslación para ajustar al centro del espacio
-x_adjusted_initial = x_initial - 3 + 0.5; % Resta 3 para alinear el centro y agrega 0.5 para el desplazamiento
-y_adjusted_initial = y_initial - 1 + 0.5; % Resta 1 para alinear el centro y agrega 0.5 para el desplazamiento
+% Variables del Pololu
+r = 32/(2*1000); % Radio de las ruedas en metros
+l = 96/(2*1000); % Distancia entre ruedas en metros
 
 % Parámetros del entorno
 ancho_espacio = 1; % Ancho del espacio en metros
 largo_espacio = 1; % Largo del espacio en metros
 
 % Configuración de control PID
-kp = 10.0; % Ganancia proporcional
-ki = 0.01; % Ganancia integral
+kp = 1.0; % Ganancia proporcional
+ki = 0.0; % Ganancia integral
 kd = 0.0; % Ganancia derivativa
 
 % Variables de control
@@ -55,13 +54,10 @@ while true
     x = pose(1);
     y = pose(2);
     heading = pose(4);
-    
-    x_ajustada = x - 3 + 0.5; % Resta 3 para alinear el centro y agrega 0.5 para el desplazamiento
-    y_ajustada = y - 1 + 0.5; % Resta 1 para alinear el centro y agrega 0.5 para el desplazamiento
-   
+
     % Calcular errores de posición y orientación
-    error_x = target_x - x_ajustada;
-    error_y = target_y - y_ajustada;
+    error_x = target_x - x;
+    error_y = target_y - y;
     error_heading = target_heading - heading;
 
     % Calcular el error integral
