@@ -4,8 +4,12 @@
 El trabajo de graduación realizado se titula Implementación de algoritmos de física granular con agentes robóticos móviles en la plataforma Robotat. Los
 algoritmos de física granular son herramientas numéricas esenciales para simular sistemas granulares, como materiales en polvo o granos, permitiendo la modelización de interacciones a nivel microscópico y la predicción del comportamiento del sistema. El objetivo principal del trabajo es evaluar y implementar algoritmos de física granular en agentes robóticos móviles en la plataforma Robotat que se puede observar a continuación.
 
-![Robotat.](Fotos/Robotat.jpeg)
-**Figura 1, Plataforma Robotat**
+<p align="center">
+  <img src="Fotos/Robotat.jpeg" alt="Plataforma Robotat">
+</p>
+
+
+
 
 Esta plataforma que es un sistema de experimentación para el campo de la robótica, se encuentra en las instalaciones de la Universidad del Valle de Guatemala. Este se inspira en el concepto del Robotarium desarrollado en el Instituto de Tecnología de Georgia, en Estados Unidos. El Robotat está constituido por una plataforma de acero color blanco, que se encuentra rodeada por el sistema OptiTrack, el cual está compuesto principalmente por 6 cámaras de captura de movimiento de alta precisión para realizar seguimiento preciso y registro de movimiento en tiempo real en un espacio determinado. 
 
