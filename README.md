@@ -10,11 +10,11 @@ Esta plataforma que es un sistema de experimentación para el campo de la robót
 
 Previamente, en la Universidad del Valle de Guatemala se llevó a cabo un proyecto de cooperación junto con la Universidad de Navarro, España. El objetivo del proyecto era utilizar robots Alphabot 2 para realizar pruebas de ejecución y validación de algoritmos de física granular estudiados por el Licenciado Juan Diego Robles (Tam, 2022). Por lo tanto, se construyó un sistema robótico que incluía una cámara de vídeo con brazo móvil articulado visto a continuación. 
 
-![Alphabot2.](Fotos/Alphabot2-pi-3.jpg)
+![Alphabot2.](Fotos/Agentes-Alphabot2.jpg)
 
 La finalidad de este sistema era verificar la funcionalidad de la plataforma robótica Alphabot 2 así como su capacidad de ejecutar tareas relacionadas al seguimiento de líneas pintadas en el suelo. Para utilizar estos agentes, se requiere tener una base de conocimientos en la serie de ordenadores monoplaca Rasperry Pi, ya que para controlar el agente se utiliza una placa Rasperry Pi 3B. Asimismo, se requiere saber datos de implementación y funcionalidad de los agentes en general, es así que se utilizó un manual de usuario creado por Luis Nij ***[Colocar documento]***. Las pruebasmencionadas con anterioridad, se replicaron en este trabajo de graduación con el fin de comparar el funcionamiento y rendimiento que estos agentes robóticos móviles tendrían a comparación de los agentes robóticos Pololu 3Pi+ 32u4 OLED, los cuales se pueden observar en la siguiente imagen.
 
-![Agentes Pololu 3pi+ 32u Oled.](Fotos/Pololu.jpg)
+![Agentes Pololu 3pi+ 32u Oled.](Fotos/Agentes -Pololu.jpg) 
 
 
 # Física granular
