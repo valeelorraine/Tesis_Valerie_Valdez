@@ -767,16 +767,16 @@ clear all;
 clc;
 
 % Parámetros de la simulación
-num_particulas = 10;
+num_particulas = 1;
 tiempo_simulacion = 30;  % Tiempo de simulación en segundos (30 segundos en este ejemplo)
 paso_tiempo = 0.01;      % Tamaño del paso de tiempo en segundos
 masa_particula = 1.0;    % Masa de cada partícula
-espacio = 10.0;          % Tamaño del espacio a utilizar
+espacio = 4.0;          % Tamaño del espacio a utilizar
 
-% Distribuir las partículas equidistantemente en el espacio
-num_particulas_por_lado = round(num_particulas^(1/2)); % Raíz cuadrada del número de partículas por lado
-num_particulas = num_particulas_por_lado^2; % cuadrado de partículas
-espaciado_entre_particulas = espacio / num_particulas_por_lado;
+% % Distribuir las partículas equidistantemente en el espacio
+% num_particulas_por_lado = round(num_particulas^(1/2)); % Raíz cuadrada del número de partículas por lado
+% num_particulas = num_particulas_por_lado^2; % cuadrado de partículas
+% espaciado_entre_particulas = espacio / num_particulas_por_lado;
 
 % Inicialización de posiciones y velocidades aleatorias
 posiciones = rand(num_particulas, 2) * espacio;   % Posiciones iniciales aleatorias en el espacio 2D
@@ -815,8 +815,8 @@ for paso = 1:num_pasos
     end
     
     % Almacenar las coordenadas de posición de cada partícula en este paso de tiempo
-    trayectorias_x_acum(:, paso) = posiciones(:, 1);
-    trayectorias_y_acum(:, paso) = posiciones(:, 2);
+    %trayectorias_x_acum(:, paso) = posiciones(:, 1);
+   % trayectorias_y_acum(:, paso) = posiciones(:, 2);
     
     % Actualizar posiciones y aceleraciones para el siguiente paso de tiempo
     posiciones_ant = posiciones;
@@ -824,7 +824,7 @@ for paso = 1:num_pasos
     % Dibujar las partículas en la figura actualizada
     scatter(posiciones(:, 1), posiciones(:, 2), 10, 'filled', 'MarkerFaceAlpha', 0.5);
     xlabel('X');
-    ylabel('Y');
+    ylabel('Y');    
     title('Simulación de Trayectorias de Partículas (2D)');
     grid on;
     axis([0, espacio, 0, espacio]);

@@ -6,8 +6,8 @@ clear all;
 clc;
 
 %% POLOLU Conexión con el servidor del Robotat y Pololu
-PololuNumb = 2;                           % Pololu a utilizar
-ObjNumb = 2;                              % Número de Marker 
+PololuNumb = 4;                           % Pololu a utilizar
+ObjNumb = 4;                              % Número de Marker 
 Opti = robotat_connect(); % Conexión con el robotat
 PI3 = robotat_3pi_connect(PololuNumb);    % Conectarse al pololu
 
@@ -28,7 +28,7 @@ l = 96*1000/(2*1000);                    % Dist. llantas desde el centro [m]
 % Se encuentra el offset en base a la posición del marcador (angulo de rotación)
 clc;
 tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx')
-offsetB =  166.3237;                     % Calibrar orientación pololu
+offsetB =  141.097;                     % Calibrar orientación pololu
 bearing = tempBear(4)-offsetB            % ángulo, lo mas cercano a 0
 
 %% Obteniendo los puntos para los obstáculos

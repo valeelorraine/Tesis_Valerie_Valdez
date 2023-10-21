@@ -5,9 +5,9 @@ clear all;
 clc;
 
 %% POLOLU Conexión con el servidor del Robotat y Pololu
-PololuNumb = 2;                           % Pololu a utilizar
-ObjNumb = 2;                              % Número de Marker 
-Opti = robotat_connect(); % Conexión con el robotat
+PololuNumb = 4;                           % Pololu a utilizar
+ObjNumb = 4;                              % Número de Marker 
+Opti = robotat_connect();                 % Conexión con el robotat
 PI3 = robotat_3pi_connect(PololuNumb);    % Conectarse al pololu
 
 %% Desconexion del agente
@@ -23,78 +23,66 @@ robotat_3pi_force_stop(PI3)
 r = 32/(2*1000); % Radio de las ruedas en metros
 l = 96/(2*1000); % Distancia entre ruedas en metros
 
-%% Obtén la posición inicial del robot en el sistema OptiTrack
-pose = robotat_get_pose(Opti, PololuNumb, 'eulzyx');
-x_initial = pose(1);
-y_initial = pose(2);
+%% Ángulo de bearing
+% Se encuentra el offset en base a la posición del marcador (angulo de rotación)
+clc;
+tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx')
+offsetB =  134.8168;                     % Calibrar orientación pololu
+bearing = tempBear(4)-offsetB            % ángulo, lo mas cercano a 0
 
-% Realiza la traslación para ajustar al centro del espacio
-x_adjusted_initial = x_initial - 3 + 0.5; % Resta 3 para alinear el centro y agrega 0.5 para el desplazamiento
-y_adjusted_initial = y_initial - 1 + 0.5; % Resta 1 para alinear el centro y agrega 0.5 para el desplazamiento
+%% Variables de control del sistema
+%           PID orientación
+kpO = 10; 
+kiO = 0.001; 
+kdO = 0;
+EO = 0;
+eO_1 = 0;
 
-% Parámetros del entorno
-ancho_espacio = 1; % Ancho del espacio en metros
-largo_espacio = 1; % Largo del espacio en metros
+% Acercamiento exponencial
+v0 = 6; 
+alpha = 0.95;
 
-% Configuración de control PID
-kp = 10.0; % Ganancia proporcional
-ki = 0.01; % Ganancia integral
-kd = 0.0; % Ganancia derivativa
+%% Controlador
+P = 1;
 
-% Variables de control
-target_x = 0.5; % Posición x deseada
-target_y = 0.9; % Posición y deseada
-target_heading = 0; % Orientación deseada
-error_integral = 0;
-error_previo = 0;
-
-% Bucle principal
-while true
-    % Obtener la posición actual del robot
-    pose = robotat_get_pose(Opti, PololuNumb, 'eulzyx');
-    x = pose(1);
-    y = pose(2);
-    heading = pose(4);
+while(1)
+    tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
+    temp2 = robotat_get_pose(Opti, 2, 'eulzyx')
+    bearing = deg2rad(tempBear(4)-offsetB);                % -offset orientarlo bien para el control
+    xg = 0;                                         % Coordenada x
+    yg = 0;                                         % Coordenada Y
+                                                           % el punto cambia conforme se acerca
+    x = tempBear(1);
+    y = tempBear(2);
+    e = [xg-x;yg-y];                                       % Error
+    thetag = atan2(e(2), e(1));                            % Angulo entre puntos deseados
     
-    x_ajustada = x - 3 + 0.5; % Resta 3 para alinear el centro y agrega 0.5 para el desplazamiento
-    y_ajustada = y - 1 + 0.5; % Resta 1 para alinear el centro y agrega 0.5 para el desplazamiento
-   
-    % Calcular errores de posición y orientación
-    error_x = target_x - x_ajustada;
-    error_y = target_y - y_ajustada;
-    error_heading = target_heading - heading;
+    eP = norm(e);                                          % Dist, entre pinicial y meta
+    eO = thetag - bearing; 
+    eO = atan2(sin(eO), cos(eO));                          % Error orientacion
+    
+   % if(P < length(xpath))                                % Cada vez que la dist < 0.1, p aumenta y cambia de punto
+   %    if(eP<0.1)
+   %      P = P+1;
+   %    end
+   %  end
+    
+    % Control de velocidad lineal exponencial
+    kP = v0 * (1-exp(-alpha*eP^2)) / eP;
+    v = kP*eP;
+    
+    % Control de velocidad angular
+    eO_D = eO - eO_1;
+    EO = EO + eO;
+    w = kpO*eO + kiO*EO + kdO*eO_D;
+    eO_1 = eO;
+    
+    % Se combinan los controladores
+    u = [v; w];
+ 
+    v_rigth_wheel = (u(1) + u(2) *l)/r 
+    v_left_wheel = (u(1) - u(2) *l)/r 
 
-    % Calcular el error integral
-    error_integral = error_integral + error_x;
-
-    % Calcular la señal de control PID
-    control_signal = kp * error_x + ki * error_integral + kd * (error_x - error_previo);
-
-    % Actualizar velocidades de las ruedas
-    v_left = control_signal + 0.5 * error_heading * l;
-    v_right = control_signal - 0.5 * error_heading * l;
-
-    % Limitar las velocidades para evitar movimientos bruscos
-    max_speed = 0.1; % Máxima velocidad lineal permitida
-    v_left = max(min(v_left, max_speed), -max_speed);
-    v_right = max(min(v_right, max_speed), -max_speed);
-
-    % Enviar las velocidades al robot
-    robotat_3pi_set_wheel_velocities(PI3, v_left, v_right);
-
-    % Verificar si el robot está cerca de una pared y hacerlo rebotar
-    if x < 0 || x > ancho_espacio || y < 0 || y > largo_espacio
-        % Cambiar la orientación en 180 grados
-        target_heading = heading + pi;
-        error_integral = 0;
-    end
-
-    % Actualizar el error previo
-    error_previo = error_x;
-
-    % Pausa para el bucle principal
-    pause(0.01);
+    robotat_3pi_set_wheel_velocities(PI3,v_left_wheel,v_rigth_wheel); 
 end
 
-% Detener el robot al final
-robotat_3pi_force_stop(PI3);
