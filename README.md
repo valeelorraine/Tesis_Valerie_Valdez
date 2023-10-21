@@ -8,15 +8,19 @@ algoritmos de física granular son herramientas numéricas esenciales para simul
   <img src="Fotos/Robotat.jpeg" alt="Plataforma Robotat">
 </p>
 
-
+![Robotat.](Fotos/Robotat.jpeg)
+**Figura 1, Plataforma Robotat**
 
 
 Esta plataforma que es un sistema de experimentación para el campo de la robótica, se encuentra en las instalaciones de la Universidad del Valle de Guatemala. Este se inspira en el concepto del Robotarium desarrollado en el Instituto de Tecnología de Georgia, en Estados Unidos. El Robotat está constituido por una plataforma de acero color blanco, que se encuentra rodeada por el sistema OptiTrack, el cual está compuesto principalmente por 6 cámaras de captura de movimiento de alta precisión para realizar seguimiento preciso y registro de movimiento en tiempo real en un espacio determinado. 
 
 Previamente, en la Universidad del Valle de Guatemala se llevó a cabo un proyecto de cooperación junto con la Universidad de Navarro, España. El objetivo del proyecto era utilizar robots Alphabot 2 para realizar pruebas de ejecución y validación de algoritmos de física granular estudiados por el Licenciado Juan Diego Robles (Tam, 2022). Por lo tanto, se construyó un sistema robótico que incluía una cámara de vídeo con brazo móvil articulado visto en la Figura 2. 
 
-![Alphabot2.](Fotos/Agentes_Alphabot2.jpg)
-**Figura 2, Agente robótico Alphabot2**
+<p align="center">
+  <img src="Fotos/Agentes_Alphabot2.jpg" alt="Agentes Alphabot2">
+</p>
+
+
 
 La finalidad de este sistema era verificar la funcionalidad de la plataforma robótica Alphabot 2 así como su capacidad de ejecutar tareas relacionadas al seguimiento de líneas pintadas en el suelo. Para utilizar estos agentes, se requiere tener una base de conocimientos en la serie de ordenadores monoplaca Rasperry Pi, ya que para controlar el agente se utiliza una placa Rasperry Pi 3B. Asimismo, se requiere saber datos de implementación y funcionalidad de los agentes en general, es así que se utilizó un manual de usuario creado por Luis Nij ***[Colocar documento]***. Las pruebasmencionadas con anterioridad, se replicaron en este trabajo de graduación con el fin de comparar el funcionamiento y rendimiento que estos agentes robóticos móviles tendrían a comparación de los agentes robóticos Pololu 3Pi+ 32u4 OLED, los cuales se pueden observar en la Figura 3.
 
