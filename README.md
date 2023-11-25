@@ -63,7 +63,7 @@ Es así que se realizaron distintas simulaciones y se demostró que el comportam
 
 </div>
     <p align="center">
-  <img src="GIFs/100_p.gif" alt="100p"  width="300" height="300">
+  <img src="GIFs/100_p.gif" alt="100p"  width="550" height="400">
 </p>
 
 <div align="center">
