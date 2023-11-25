@@ -51,11 +51,11 @@ actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del 
 Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede en las imagenes a continuación. Estas muestran la evolución de las trayectorias de 3 partículas en estado dinámico orbitando sobre una partícula estacionaria. Cada una de las partículas dinámicas presenta una trayectoria distinta debido a que se inicializaron con distintas condiciones iniciales.
 
 <p align="center">
-  <img src="Fotos/3Dinamica_1estatica_7pasos.png" alt="7pasos"  width="300" height="300">
+  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="300" height="300">
 </p>
 
 <div align="center">
-  <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos>
+  <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos
 </div>
 
 
@@ -64,7 +64,7 @@ Los resultados más significativos para esta primera implementación se pueden o
 </p>
 
 <div align="center">
-  <strong>Figura 5, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 50 pasos>
+  <strong>Figura 5, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 50 pasos
 
     
 </div>
@@ -73,17 +73,21 @@ Los resultados más significativos para esta primera implementación se pueden o
 </p>
 
 <div align="center">
-  <strong>Figura 6, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 150 pasos>
+  <strong>Figura 6, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 150 pasos
 </div>
 
+Luego de obtener estos resultos preliminares, se implementó el algoritmo por completo. Para este se requiere considerar el potencial de Lennard-Jones para considerar todas las interacciones entre partículas.
+Es así que se realizaron distintas simulaciones y se demostró que el comportamiento de las partículas está influenciado por las fuerzas atractivas y repulsivas del LJP, lo que puede dar lugar a cambios notables en las trayectorias. Estas simulaciones dinámicas contribuyeron a indagar en comprender cómo las interacciones entre partículas pueden dar lugar a agrupamientos y patrones emergentes. Un ejemplo se puede observar en el siguiente GIF. Esta es una simulación que contiene 100 partículas distribuidas equidistantes unas de las otras en un espacio de igual tamaño que las simulaciones anteriores. 
 
+</div>
+    <p align="center">
+  <img src="Fotos/3Dinamicas_1estatica_150pasos.png" alt="7pasos"  width="300" height="300">
+</p>
 
-Una parte fundamental de estas simulaciones es la consideración del potencial del LJP, que modela las interacciones entre partículas. Se demostró que el
-comportamiento de las partículas está influenciado por las fuerzas atractivas y repulsivas del LJP, lo que puede dar lugar a cambios notables en las trayectorias. A medida que se avance en el capítulo, se evidencia que se examinaron simulaciones más complejas, incluyendo sistemas tridimensionales y configuraciones con un mayor número de partículas. Estas simulaciones dinámicas contribuyeron a indagar en comprender cómo las interacciones entre partículas pueden dar lugar a agrupamientos y patrones emergentes. En síntesis, en este capítulo se explora la dinámica molecular, la simulación directa de Monte Carlo y las simulaciones de sistemas granulares. Para obtener los resultados de las simulaciones, se desarrollaron múltiples códigos utilizando el software MATLAB. Asimismo, en las siguientes secciones se proporcionaron explicaciones detalladas de diferentes secciones de código para ayudar al lector a identificar y comprender las partes esenciales para realizar.
+<div align="center">
+  <strong>Figura 6, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 150 pasos
+</div>
 
-Esta contiene 100 partículas distribuidas equidistantes unas de las otras en un espacio de igual tamaño que las simulaciones anteriores. Esto puede observarse en la primera Figura que presenta una vista de los ejes Z y X de la simulación y la segunda Figura que presenta una vista isométrica de las tres dimensiones. 
-
-![3 partículas Dinámicas orbitando una estática con 150 pasos](Fotos/8particulas_DM_3D_VistaFrontal.eps)
 
 ![3 partículas Dinámicas orbitando una estática con 150 pasos](Fotos/8particulas_DM_3D_VistaIsométrica.eps)
 
