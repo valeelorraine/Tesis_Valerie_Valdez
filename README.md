@@ -55,7 +55,7 @@ Los resultados más significativos para esta primera implementación se pueden o
 </p>
 
 <div align="center">
-  <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos
+  <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos</strong>
 </div>
 
 Luego de obtener estos resultos preliminares, se implementó el algoritmo por completo. Para este se requiere considerar el potencial de Lennard-Jones para considerar todas las interacciones entre partículas.
@@ -67,7 +67,7 @@ Es así que se realizaron distintas simulaciones y se demostró que el comportam
 </p>
 
 <div align="center">
-  <strong>Figura 5, 100 partículas controladas por el algoritmo de Dinámica Molecular
+  <strong>Figura 5, 100 partículas controladas por el algoritmo de Dinámica Molecular</strong>
 </div>
 
 Al pasar el tiempo, se evidencian comportamientos interesantes en donde en un sistema con muchas partículas aleatorias, es estadísticamente probable que algunas de estas partículas se acerquen lo suficiente como para experimentar interacciones atractivas como cuando algunas partículas comienzan a acercarse, se forman pequeños grupos.
