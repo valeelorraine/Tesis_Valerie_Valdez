@@ -51,7 +51,7 @@ actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del 
 Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede en las imagenes a continuación. Estas muestran la evolución de las trayectorias de 3 partículas en estado dinámico orbitando sobre una partícula estacionaria. Cada una de las partículas dinámicas presenta una trayectoria distinta debido a que se inicializaron con distintas condiciones iniciales.
 
 <p align="center">
-  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="400" height="400">
+  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="500" height="550">
 </p>
 
 <div align="center">
@@ -63,17 +63,14 @@ Es así que se realizaron distintas simulaciones y se demostró que el comportam
 
 </div>
     <p align="center">
-  <img src="Fotos/3Dinamicas_1estatica_150pasos.png" alt="7pasos"  width="300" height="300">
+  <img src="GIFs/100_p.gif" alt="100p"  width="300" height="300">
 </p>
 
 <div align="center">
-  <strong>Figura 6, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 150 pasos
+  <strong>Figura 5, 100 partículas controladas por el algoritmo de Dinámica Molecular
 </div>
 
-
-![3 partículas Dinámicas orbitando una estática con 150 pasos](Fotos/8particulas_DM_3D_VistaIsométrica.eps)
-
-Al pasar el tiempo, se evidencian comportamientos interesantes en donde en un sistema con muchas partículas aleatorias, es estadísticamente probable que algunas de estas partículas se acerquen lo suficiente como para experimentar interacciones atractivas debido al LJP. Cuando algunas partículas comienzan a acercarse, se forman pequeños grupos.
+Al pasar el tiempo, se evidencian comportamientos interesantes en donde en un sistema con muchas partículas aleatorias, es estadísticamente probable que algunas de estas partículas se acerquen lo suficiente como para experimentar interacciones atractivas como cuando algunas partículas comienzan a acercarse, se forman pequeños grupos.
 
 # Referencias
 Jaeger & Sidney. (2011). *Physics of the Granular State.* https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/jaeger1992a.pdf
