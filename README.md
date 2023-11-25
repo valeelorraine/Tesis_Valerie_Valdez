@@ -51,29 +51,11 @@ actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del 
 Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede en las imagenes a continuación. Estas muestran la evolución de las trayectorias de 3 partículas en estado dinámico orbitando sobre una partícula estacionaria. Cada una de las partículas dinámicas presenta una trayectoria distinta debido a que se inicializaron con distintas condiciones iniciales.
 
 <p align="center">
-  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="300" height="300">
+  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="400" height="400">
 </p>
 
 <div align="center">
   <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos
-</div>
-
-
-<p align="center">
-  <img src="Fotos/3Dinamicas_1estatica_50pasos.png" alt="7pasos"  width="300" height="300">
-</p>
-
-<div align="center">
-  <strong>Figura 5, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 50 pasos
-
-    
-</div>
-    <p align="center">
-  <img src="Fotos/3Dinamicas_1estatica_150pasos.png" alt="7pasos"  width="300" height="300">
-</p>
-
-<div align="center">
-  <strong>Figura 6, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 150 pasos
 </div>
 
 Luego de obtener estos resultos preliminares, se implementó el algoritmo por completo. Para este se requiere considerar el potencial de Lennard-Jones para considerar todas las interacciones entre partículas.
