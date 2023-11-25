@@ -9,7 +9,8 @@ clc;
 %% POLOLU Conexión con el servidor del Robotat y Pololu
 PololuNumb = 2;                             % # de Pololu a utilizar
 ObjNumb = 2;                                  % # de Marker colocado en el Pololu
-Opti = robotat_connect();                   % Conectar con el robotat
+Opti = robotat_connect();       
+% Conectar con el robotat
 PI3 = robotat_3pi_connect(PololuNumb);      % Conectarse al pololu
 
 %% Desconexion del agente
@@ -54,7 +55,7 @@ tiempo_simulacion = 10;  % Tiempo de simulación en segundos (30 segundos en est
 %paso_tiempo = 0.0025 ;  % Tamaño del paso de tiempo en segundos
 %paso_tiempo = 0.002;    % segunda prueba
 %paso_tiempo = 0.0015;   % Tercera prueba
-paso_tiempo = 0.001 ;    % 4 y 5
+paso_tiempo = 0.0025 ;    % 4 y 5
 
 masa_particula = 1.0;    % Masa de cada partícula
 espacio = 1.0;           % Tamaño del espacio a utilizar
@@ -65,14 +66,14 @@ num_pasos = tiempo_simulacion / paso_tiempo;
 %% Trayectoria con dinamica molecular
 %posiciones = zeros(1,2);
 %posiciones = rand(num_particulas, 2)*espacio;
-posiciones = [0.6,0] 
+posiciones = [0,0] 
 posiciones0 = posiciones;
 
 % Velocidades iniciales aleatorias en 2D
 %velocidades = [2,1];     % Primera prueba
 %velocidades = [2,1.25];  % Segunda prueba
 %velocidades = [2,1.66];  % Tercera prueba
-velocidades = [2,2.5];    % Cuarta prueba
+velocidades = [2,1];    % Cuarta prueba
 %velocidades = [2,5];     % Quinta prueba
                     
 aceleraciones = zeros(num_particulas, 2); % Inicializar aceleraciones a cero en 2D
@@ -108,13 +109,13 @@ for paso = 1:450
     
     % Dibujar las partículas en la figura actualizada
     scatter(posiciones(:, 1), posiciones(:, 2), 10, 'filled', 'MarkerFaceAlpha', 0.5);
-    x_path(end+1) = posiciones(:,1);
-    y_path(end+1) = posiciones(:,2);
+    x_path(end+1) = posiciones(:,1)-1;
+    y_path(end+1) = posiciones(:,2)-1;
     xlabel('X (m)');
     ylabel('Y (m)');    
     title('Simulación de Trayectorias de Partículas (2D)');
     grid on;
-    axis([0, 1, 0, 1]);
+    axis([-1, 1, -1, 1]);
     
     % Pausa para permitir que MATLAB actualice la figura
     pause(paso_tiempo);
@@ -124,7 +125,7 @@ xlabel('X (m)');
 ylabel('Y (m)');    
 title('Simulación de Trayectorias de Partículas (2D)');
 grid on;
-axis([0, 1, 0, 1]);
+axis([-1, 0, -1, 0]);
 %plot(x_path,y_path)
 plot(x_path(1:400),y_path(1:400))    % Todas las pruebas
 pbaspect([1 1 1])
@@ -146,8 +147,8 @@ v0 = 5;
 tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
 x = tempBear(1);    
 y = tempBear(2);  
-xg = posiciones0(1);                                       % Coordenada x
-yg = posiciones0(2);    
+xg = posiciones(1);                                       % Coordenada x
+yg = posiciones(2);    
 e = [xg-x;yg-y];    
 eP = norm(e);  
 
@@ -204,19 +205,19 @@ while(eP > 0.1)
 end
 
 robotat_3pi_force_stop(PI3)
-kpO = 17;  %1
+kpO = 12;  %1
 kiO = 0.002; 
 kdO = 0;
 EO = 0;
 eO_1 = 0;               % Error de orientación
 
 % Acercamiento exponencial
-v0 = 20;                % estaba en 10, Velocidad inicial
+v0 = 15;                % estaba en 10, Velocidad inicial
 alpha = 0.95;           % 95
 
 
 %% Orientarlo bien
-kpO = 20;  %1
+kpO = 0;  %1
 tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
 x = tempBear(1);
 y = tempBear(2);  
@@ -230,8 +231,8 @@ eO = atan2(sin(eO), cos(eO));
 while(eO > 0.05)
     tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
     bearing = deg2rad(tempBear(4)-offsetB);                % -offset orientarlo bien para el control
-    xg = 1.5;                                   % Coordenada x
-    yg = 1.5;                                
+    xg = -1.5;                                   % Coordenada x
+    yg = -1.5;                                
     
     % Coordenada Y
                                                            % el punto cambia conforme se acerca
@@ -281,6 +282,18 @@ end
 
 robotat_3pi_force_stop(PI3)
 
+% %          PID orientación
+% kpO = 12;  %1
+% kiO = 0.002; 
+% kdO = 0;
+% EO = 0;
+% eO_1 = 0;               % Error de orientación
+% 
+% % Acercamiento exponencial
+% v0 = 10;                % estaba en 10, Velocidad inicial
+% alpha = 0.90;           % 95
+
+
 %          PID orientación
 kpO = 12;  %1
 kiO = 0.002; 
@@ -289,9 +302,8 @@ EO = 0;
 eO_1 = 0;               % Error de orientación
 
 % Acercamiento exponencial
-v0 = 10;                % estaba en 10, Velocidad inicial
-alpha = 0.90;           % 95
-
+v0 = 2;                % estaba en 10, Velocidad inicial
+alpha = 0.90;
 %% Suavizado
 % largo = length(trayectoria)/8; % longitud de datos dividido 4
 % xy_puntos = [];
@@ -371,7 +383,7 @@ while(1)
     ylabel('Y (m)');    
     title('Trayectoria simulada y física (2D)');
     grid on;
-    axis([0, espacio, 0, espacio]); 
+    axis([-1, 0, -1, 0]); 
     
 %     frame = getframe(f);
 %     % Convertir la trama en una imagen RGB (3 dimensiones) 
