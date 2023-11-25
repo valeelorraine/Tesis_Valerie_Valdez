@@ -45,35 +45,37 @@ La física granular es una rama de la física que se enfoca en el estudio de mat
 Algunas herramientas utilizadas para el estudio de la física granular son los algoritmos. Existen distintos algoritmos y si se desea saber un poco más acerca de ellos, se puede revisar el marco teórico del trabajo realizado, no obstante, en este repositorio se hablará únicamente de dos: *Dinámica molecular* y *La simulación directa de Monte Carlo*. El proceso que se llevó a cabo para realizar este trabajo de graduación se dividió en tres etapas interconectadas: primero, se investigaron y analizaron modelos y algoritmos de física granular; luego, se realizaron simulaciones computarizadas para evaluar el rendimiento de estos algoritmos; finalmente, se llevó a cabo una validación de resultados mediante experimentación física. 
 
 # Pruebas computarizadas
-Como se mencionó anteriormente en esta sección se destacan dos algoritmos de física granular: *Dinámica Molecular* y *La simulación directa de Monte Carlo*. Estos algoritmos se seleccionaron para realizar diversas simulaciones y así comprender cómo interactúan las partículas en un sistema y evolucionan con el tiempo. Para lograr esto, se aplican principios fundamentales de la física, como la Segunda Ley de Newton, que relaciona el cambio en el momento cinético con las fuerzas que
-actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del tiempo en las simulaciones, se recurre a métodos numéricos para calcular las posiciones y velocidades en momentos futuros. En estas pruebas iniciales, [se implementó el algoritmo de Dinámica Molecular](Diagramas/DM_tiro_parabólico.drawio) para simular el movimiento de partículas en un entorno bidimensional, y al código se encuentra en este mismo [repositorio:](Códigos/DM_Computacional.m)
+Como se mencionó anteriormente en esta sección se destacan dos algoritmos de física granular: *Dinámica Molecular* y *La simulación directa de Monte Carlo*. Estos algoritmos se seleccionaron para realizar diversas simulaciones y así comprender cómo interactúan las partículas en un sistema y evolucionan con el tiempo. Para lograr esto, se aplican principios fundamentales de la física, como la Segunda Ley de Newton, que relaciona el cambio en el momento cinético con las fuerzas que actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del tiempo en las simulaciones, se recurre a métodos numéricos para calcular las posiciones y velocidades en momentos futuros. En estas pruebas iniciales, [se implementó el algoritmo de Dinámica Molecular](Diagramas/DM_tiro_parabólico.drawio) para simular el movimiento de partículas en un entorno bidimensional, y al código se encuentra en este mismo [repositorio:](Códigos/DM_Computacional.m)
 
 Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede en las imagenes a continuación. Estas muestran la evolución de las trayectorias de 3 partículas en estado dinámico orbitando sobre una partícula estacionaria. Cada una de las partículas dinámicas presenta una trayectoria distinta debido a que se inicializaron con distintas condiciones iniciales.
 
 <p align="center">
-  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="400" height="400">
+  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="550" height="350">
 </p>
 
 <div align="center">
-  <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos
+  <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos</strong>
 </div>
 
+---
+
 Luego de obtener estos resultos preliminares, se implementó el algoritmo por completo. Para este se requiere considerar el potencial de Lennard-Jones para considerar todas las interacciones entre partículas.
-Es así que se realizaron distintas simulaciones y se demostró que el comportamiento de las partículas está influenciado por las fuerzas atractivas y repulsivas del LJP, lo que puede dar lugar a cambios notables en las trayectorias. Estas simulaciones dinámicas contribuyeron a indagar en comprender cómo las interacciones entre partículas pueden dar lugar a agrupamientos y patrones emergentes. Un ejemplo se puede observar en el siguiente GIF. Esta es una simulación que contiene 100 partículas distribuidas equidistantes unas de las otras en un espacio de igual tamaño que las simulaciones anteriores. 
+Es así que se realizaron distintas simulaciones y se demostró que el comportamiento de las partículas está influenciado por las fuerzas atractivas y repulsivas del LJP, lo que puede dar lugar a cambios notables en las trayectorias. Estas simulaciones dinámicas contribuyeron a indagar en comprender cómo las interacciones entre partículas pueden dar lugar a agrupamientos y patrones emergentes. Un ejemplo se puede observar en el siguiente GIF. Esta es una simulación que contiene 100 partículas distribuidas equidistantes unas de las otras en un espacio de 1x1x1 m. 
 
 </div>
     <p align="center">
-  <img src="Fotos/3Dinamicas_1estatica_150pasos.png" alt="7pasos"  width="300" height="300">
+  <img src="GIFs/100_p.gif" alt="100p"  width="550" height="400">
 </p>
 
 <div align="center">
-  <strong>Figura 6, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 150 pasos
+  <strong>Figura 5, 100 partículas controladas por el algoritmo de Dinámica Molecular</strong>
 </div>
 
+---
 
-![3 partículas Dinámicas orbitando una estática con 150 pasos](Fotos/8particulas_DM_3D_VistaIsométrica.eps)
+Como se evidencia, pasar el tiempo, se evidencian comportamientos interesantes en donde en un sistema con muchas partículas aleatorias, es estadísticamente probable que algunas de estas partículas se acerquen lo suficiente como para experimentar interacciones atractivas como cuando algunas partículas comienzan a acercarse, se forman pequeños grupos.
 
-Al pasar el tiempo, se evidencian comportamientos interesantes en donde en un sistema con muchas partículas aleatorias, es estadísticamente probable que algunas de estas partículas se acerquen lo suficiente como para experimentar interacciones atractivas debido al LJP. Cuando algunas partículas comienzan a acercarse, se forman pequeños grupos.
+Si se desea indagar un poco más en el tema, se encuentran distintas carpetas que presentan fotografías, la documentación completa del trabajo de graduación, referenecias bibliográficas e incluso videos que demuestran el fncionamiento de diferentes pruebas.
 
 # Referencias
 Jaeger & Sidney. (2011). *Physics of the Granular State.* https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/jaeger1992a.pdf
