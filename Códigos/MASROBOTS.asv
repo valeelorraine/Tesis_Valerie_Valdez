@@ -10,13 +10,13 @@ ObjNumb = 2;                               % # de Marker colocado en el Pololu
 Opti = robotat_connect();                  % Conectar con el robotat
 PI31 = robotat_3pi_connect(PololuNumb);    % Conectarse al pololu
 
-PololuNumb2 = 3;                            % # de Pololu a utilizar
-ObjNumb2 = 3;                               % # de Marker colocado en el Pololu
-PI32 = robotat_3pi_connect(PololuNumb2);     % Conectarse al pololu
+PololuNumb2 = 3;                           % # de Pololu a utilizar
+ObjNumb2 = 3;                              % # de Marker colocado en el Pololu
+PI32 = robotat_3pi_connect(PololuNumb2);   % Conectarse al pololu
 
-% PololuNumb3 = 3;                            % # de Pololu a utilizar
-% ObjNumb3 = 3;                               % # de Marker colocado en el Pololu
-% PI33 = robotat_3pi_connect(PololuNumb3);     % Conectarse al pololu 
+% PololuNumb3 = 3;                         % # de Pololu a utilizar
+% ObjNumb3 = 3;                            % # de Marker colocado en el Pololu
+% PI33 = robotat_3pi_connect(PololuNumb3); % Conectarse al pololu 
  
 %% Desconexion del agente
 robotat_3pi_disconnect(PI31)                % Desconectarme del robot
@@ -72,11 +72,11 @@ alpha = 0.88;           % 95
 %% Parámetros del potencial de Lennard-Jones
 epsilon = 1.0;          
 sigma = 1.0;
-num_particulas = 8;
+num_particulas = 2;
 tiempo_simulacion = 6   ;  % Tiempo de simulación en segundos (30 segundos en este ejemplo)
 paso_tiempo = 0.01;      % Tamaño del paso de tiempo en segundos
 masa_particula = 1.0;   % Masa de cada partícula
-espacio = 10;          % Tamaño del espacio a utilizar
+espacio = 1.5;          % Tamaño del espacio a utilizar
 
 % Bucle de simulación para calcular trayectorias
 num_pasos = tiempo_simulacion / paso_tiempo;
@@ -87,10 +87,10 @@ num_pasos = tiempo_simulacion / paso_tiempo;
 %posiciones = [1,1] 
 % num_particulas_por_lado = round(num_particulas^(1/2)); % Raíz cuadrada del número de partículas por lado
 % espaciado_entre_particulas = espacio / num_particulas_por_lado;
-%posiciones = rand(num_particulas, 2)*espaciado_entre_particulas;
-posiciones = rand(num_particulas, 2)*espacio;
-%posiciones = [0,0;0.2,1.1]
-posiciones0 = posiciones;
+% posiciones = rand(num_particulas, 2)*espaciado_entre_particulas;
+%posiciones = rand(num_particulas, 2)*espacio;
+posiciones = [0,0;0.2,1.1]
+posiciones0 = posiciones;z
 velocidades = [2.5,1]; % Velocidades iniciales aleatorias en 2D
 aceleraciones = zeros(num_particulas, 2); % Inicializar aceleraciones a cero en 2D
 posiciones_ant = posiciones;

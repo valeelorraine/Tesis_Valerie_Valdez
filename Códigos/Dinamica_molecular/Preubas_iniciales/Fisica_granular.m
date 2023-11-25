@@ -33,7 +33,7 @@ v = [0.1;4];                          % Valor inicial de la velocidad
 % Segunda ley de newton
 F = m*g;                              % Suma de todas las F de partículas (función de v y x)
 
-for step= 1:15                     % Iteración del programa
+for step= 1:15                        % Iteración del programa
     %plot(X(1),X(2),'ob');
     scatter(X(1),X(2), 'green','filled');
     hold on

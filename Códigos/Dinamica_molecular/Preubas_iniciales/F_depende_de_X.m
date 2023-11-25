@@ -47,16 +47,16 @@ h = 0.01;                             % Paso de integración (tamaño de interva
 
 x(:, 1) = [-1000; 0];  % Posición inicial de la partícula roja
 x(:, 2) = [-100; 0];   % Posición inicial de la partícula azul
-x(:, 3) = [-0.5e3; 0];   % Posición inicial de la partícula anaranjada
+x(:, 3) = [-0.5e3; 0]; % Posición inicial de la partícula anaranjada
 
 v(:, 1) = [0; -2000];  % Velocidad inicial de la partícula roja
-v(:, 2) = [0; -300];  % Velocidad inicial de la partícula azul
-v(:, 3) = [0; -100];  % Velocidad inicial de la partícula anaranjada
+v(:, 2) = [0; -300];   % Velocidad inicial de la partícula azul
+v(:, 3) = [0; -100];   % Velocidad inicial de la partícula anaranjada
 
 %% Ciclo para el funcionamiento
 %variable externa
 for step=1:150                             % Iteración del programa F = -G*(m*M/norm(x)^2)*(x/norm(x));
-    scatter(x(1,:),x(2,:), 'green','filled');
+    scatter(x(1,:),x(2,:), 'green');
     
    % set(gca,'Color','black');
     hold on

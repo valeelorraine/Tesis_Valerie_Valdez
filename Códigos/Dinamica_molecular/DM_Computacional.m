@@ -397,7 +397,7 @@ clear all;                            % Limpiar
 
 %% Código con simulación estática en 2D con colisiones elásticas entre partículas
 % Parámetros de la simulación
-num_particulas = 1;
+num_particulas = 8;
 tiempo_simulacion = 8; % Tiempo de simulación en segundos
 paso_tiempo = 0.01;      % Tamaño del paso de tiempo en segundos
 masa_particula = 1.0;    % Masa de cada partícula

@@ -51,7 +51,11 @@ epsilon = 1.0;
 sigma = 1.0;
 num_particulas = 1; 
 tiempo_simulacion = 10;  % Tiempo de simulación en segundos (30 segundos en este ejemplo)
-paso_tiempo = 0.01;      % Tamaño del paso de tiempo en segundos
+%paso_tiempo = 0.0025 ;  % Tamaño del paso de tiempo en segundos
+%paso_tiempo = 0.002;    % segunda prueba
+%paso_tiempo = 0.0015;   % Tercera prueba
+paso_tiempo = 0.001 ;    % 4 y 5
+
 masa_particula = 1.0;    % Masa de cada partícula
 espacio = 1.0;           % Tamaño del espacio a utilizar
 
@@ -61,15 +65,22 @@ num_pasos = tiempo_simulacion / paso_tiempo;
 %% Trayectoria con dinamica molecular
 %posiciones = zeros(1,2);
 %posiciones = rand(num_particulas, 2)*espacio;
-posiciones = [0.5,0.5] 
+posiciones = [0.6,0] 
 posiciones0 = posiciones;
-velocidades = [2,1];                      % Velocidades iniciales aleatorias en 2D
+
+% Velocidades iniciales aleatorias en 2D
+%velocidades = [2,1];     % Primera prueba
+%velocidades = [2,1.25];  % Segunda prueba
+%velocidades = [2,1.66];  % Tercera prueba
+velocidades = [2,2.5];    % Cuarta prueba
+%velocidades = [2,5];     % Quinta prueba
+                    
 aceleraciones = zeros(num_particulas, 2); % Inicializar aceleraciones a cero en 2D
 posiciones_ant = posiciones;
 x_path = [];
 y_path = [];
 
-for paso = 1:300
+for paso = 1:450
     % Calcular fuerzas entre partículas (utilizando el potencial de Lennard-Jones)
     fuerzas = calcular_fuerza(posiciones_ant, epsilon, sigma);
     
@@ -114,12 +125,13 @@ ylabel('Y (m)');
 title('Simulación de Trayectorias de Partículas (2D)');
 grid on;
 axis([0, 1, 0, 1]);
-plot(x_path,y_path)    % Graficar la trayectoria
+%plot(x_path,y_path)
+plot(x_path(1:400),y_path(1:400))    % Todas las pruebas
 pbaspect([1 1 1])
 hold off;
 %% Trayectoria para probar mapas
-xpath = [];
-ypath = [];
+xpath = [0,0];
+ypath = [0,0];
 
 %% Crear un gif
 % % Propiedades del archivo .GIF que se va a generar
@@ -132,11 +144,11 @@ ypath = [];
 %% Colocarlo en la posicion inicial
 v0 = 5;
 tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
-x = tempBear(1);
+x = tempBear(1);    
 y = tempBear(2);  
 xg = posiciones0(1);                                       % Coordenada x
 yg = posiciones0(2);    
-e = [xg-x;yg-y];
+e = [xg-x;yg-y];    
 eP = norm(e);  
 
 while(eP > 0.1)
@@ -144,7 +156,7 @@ while(eP > 0.1)
     bearing = deg2rad(tempBear(4)-offsetB);                % -offset orientarlo bien para el control
 
     xg = posiciones0(1);                                   % Coordenada x
-    yg = posiciones0(2);                                
+    yg = posiciones0(2);                                  
     
     % Coordenada Y                                                         % el punto cambia conforme se acerca
     x = tempBear(1);
@@ -173,7 +185,7 @@ while(eP > 0.1)
     
 %     if v_rigth_wheel > 100
 %         v_rigth_wheel = 100;
-%     end 
+%     end   
 %     if v_rigth_wheel < -100
 %         v_rigth_wheel = -100;
 %     end  
@@ -208,8 +220,8 @@ kpO = 20;  %1
 tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
 x = tempBear(1);
 y = tempBear(2);  
-xg = posiciones0(1);                                   % Coordenada x
-yg = posiciones0(2);    
+xg = 1;                                   % Coordenada x
+yg = 0.5;    
 e = [xg-x;yg-y]; 
 thetag = atan2(e(2), e(1));
 eO = thetag - bearing; 
@@ -219,7 +231,7 @@ while(eO > 0.05)
     tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
     bearing = deg2rad(tempBear(4)-offsetB);                % -offset orientarlo bien para el control
     xg = 1.5;                                   % Coordenada x
-    yg = 1,5;                                
+    yg = 1.5;                                
     
     % Coordenada Y
                                                            % el punto cambia conforme se acerca
@@ -308,14 +320,14 @@ P = 1;
 
 while(1)
     tempBear = robotat_get_pose(Opti,PololuNumb,'eulzyx'); % Coor x y Y
-    %temp2 = robotat_get_pose(Opti, 1, 'eulzyx')
+    %temp2 = robotat_get_pose(Opti, 1, 'eulzyx')xxxxxxx
     bearing = deg2rad(tempBear(4)-offsetB);                % -offset orientarlo bien para el control
 
     xg = x_path(P);                                        % Coordenada x
     yg = y_path(P);                                
     % Coordenada Y
                                                            % el punto cambia conforme se acerca
-    x = tempBear(1);
+    x = tempBear(1);        
     y = tempBear(2);    
     e = [xg-x;yg-y];                                       % Error
     thetag = atan2(e(2), e(1));                            % Angulo entre puntos deseados
@@ -378,6 +390,9 @@ while(1)
 end
 
 robotat_3pi_force_stop(PI3)
+
+%% Obtener cosas
+writecell({xpath;ypath; x_path;y_path}, 'ANGULOcuarta_prueba.xlsx')
 
 %% Stop de emergencia
 robotat_3pi_force_stop(PI3) 
