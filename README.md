@@ -50,17 +50,32 @@ actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del 
 
 Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede en las imagenes a continuación. Estas muestran la evolución de las trayectorias de 3 partículas en estado dinámico orbitando sobre una partícula estacionaria. Cada una de las partículas dinámicas presenta una trayectoria distinta debido a que se inicializaron con distintas condiciones iniciales.
 
+<p align="center">
+  <img src="Fotos/3Dinamica_1estatica_7pasos.png" alt="7pasos"  width="300" height="300">
+</p>
+
 <div align="center">
-  <strong>Figura 2, Agente robótico Alphabot2</strong>
+  <strong>Figura 4, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 7 pasos>
 </div>
 
 
+<p align="center">
+  <img src="Fotos/3Dinamicas_1estatica_50pasos.png" alt="7pasos"  width="300" height="300">
+</p>
 
-![3 partículas Dinámicas orbitando una estática con 50 pasos](Fotos/3Dinamicas_1estatica_50pasos.png)
+<div align="center">
+  <strong>Figura 5, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 50 pasos>
 
-![3 partículas Dinámicas orbitando una estática con 50 pasos](Fotos/3Dinamicas_1estatica_50pasos.eps)
+    
+</div>
+    <p align="center">
+  <img src="Fotos/3Dinamicas_1estatica_150pasos.png" alt="7pasos"  width="300" height="300">
+</p>
 
-![3 partículas Dinámicas orbitando una estática con 150 pasos](Fotos/3Dinamicas_1estatica_150pasos.eps)
+<div align="center">
+  <strong>Figura 6, Tres partículas en estado dinámico orbitando alrededor de una estática luego de 150 pasos>
+</div>
+
 
 
 Una parte fundamental de estas simulaciones es la consideración del potencial del LJP, que modela las interacciones entre partículas. Se demostró que el
