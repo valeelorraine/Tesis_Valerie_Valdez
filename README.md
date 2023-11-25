@@ -51,7 +51,7 @@ actúan sobre las partículas. Sin embargo, debido a la naturaleza discreta del 
 Los resultados más significativos para esta primera implementación se pueden observar como órbitas alrededor de partículas estáticas. Además, se exploraron las implicaciones de cambiar las condiciones iniciales y cómo esto afecta las trayectorias resultantes. Esto se puede en las imagenes a continuación. Estas muestran la evolución de las trayectorias de 3 partículas en estado dinámico orbitando sobre una partícula estacionaria. Cada una de las partículas dinámicas presenta una trayectoria distinta debido a que se inicializaron con distintas condiciones iniciales.
 
 <p align="center">
-  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="500" height="550">
+  <img src="GIFs/FdependeXY.gif" alt="7pasos"  width="500" height="600">
 </p>
 
 <div align="center">
