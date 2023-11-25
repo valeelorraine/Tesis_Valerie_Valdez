@@ -336,8 +336,8 @@
 %% Codigo 5 ESTE SI SIRVE
 clear all;                            % Limpiar 
 clc;
-%filename = '100_p.gif';          % Nombre del archivo
-%DelayTime = 0.1;                      % T. en seg. que dura cada plot en el GIF
+filename = '100_p.gif';          % Nombre del archivo
+DelayTime = 0.1;                      % T. en seg. que dura cada plot en el GIF
 f = figure(1);
 
 % Parámetros de la simulación
@@ -428,19 +428,19 @@ for paso = 1:num_pasos
     pause(0.01);
     
     
-%     frame = getframe(f);
-%     % Convertir la trama en una imagen RGB (3 dimensiones) 
-%     im = frame2im(frame);
-%     
-%     % Transformar muestras de RGB a 1 dimensión con un mapa de color "cm" 
-%     [imind,cm] = rgb2ind(im , 256); 
-%     if paso == 1
-%         % Crear el archivo GIF
-%         imwrite(imind,cm,filename,'gif','DelayTime', DelayTime , 'LoopCount' , Inf  );
-%     else
-%         % Añadir al GIF cada nuevo plot
-%         imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime', DelayTime );
-%     end
+    frame = getframe(f);
+    % Convertir la trama en una imagen RGB (3 dimensiones) 
+    im = frame2im(frame);
+    
+    % Transformar muestras de RGB a 1 dimensión con un mapa de color "cm" 
+    [imind,cm] = rgb2ind(im , 256); 
+    if paso == 1
+        % Crear el archivo GIF
+        imwrite(imind,cm,filename,'gif','DelayTime', DelayTime , 'LoopCount' , Inf  );
+    else
+        % Añadir al GIF cada nuevo plot
+        imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime', DelayTime );
+    end
 end
 
 % % Inicializa la figura para la animación
@@ -448,7 +448,7 @@ end
 % hold on; 
 % % Actualiza el gráfico con las trayectorias acumuladas hasta este paso de tiempo
 % for i = 1:num_particulas
-%     scatter3(trayectorias_x_acum(i, 1:paso), trayectorias_y_acum(i, 1:paso), trayectorias_z_acum(i, 1:paso),10, 'filled', 'MarkerFaceAlpha', 0.5);
+%     scatter3(trayectorias_x_acum(i, 1:paso), trayectorias_y_acum(i, 1:paso), trayectorias_z_acum(i, 1:paso),10, 'filled', 'Marke  rFaceAlpha', 0.5);
 % end
 % 
 % xlabel('X');
